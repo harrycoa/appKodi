@@ -7,6 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
 
+  productTitle:string = 'Lista de Productos';
+  product:any[] = [
+    {
+      "productoId": 1,
+      "productName": 'Camisa volcom'
+    },
+    {}
+
+
+
+  ];
+
   constructor() { }
 
   ngOnInit(): void {
