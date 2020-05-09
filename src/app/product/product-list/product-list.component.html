@@ -15,11 +15,12 @@
             </div>
         </div>
         <div class="table-responsive">
-            <table class="table">
+            <table class="table" *ngIf="products.length">
                 <thead>
                     <tr>
                         <th>
-                            <button class="btn btn-primary">Mostrar Imagen</button>
+                            <!-- <button *ngIf="!showImage" (click)="ShowImage()" class="btn btn-primary">{{ mensajeBoton2 }}</button> -->
+                            <button (click)="ShowImage()" class="btn btn-primary">{{ showImage ? 'ocultar': ' mostrar' }} Imagen</button>
                         </th>
                         <th>Nombre</th>
                         <th>Descripción</th>
@@ -29,8 +30,37 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- <button *ngIf="showImage" (click)="ShowImage()" class="btn btn-primary">{{ mensajeBoton }}</button> -->
+                    <tr *ngFor="let product of products">
+                        <td>
+                            <img *ngIf="showImage" [src]="product.imageUrl" [title]="product.productName" [style.with.px]="imageWidth" [style.margin.px]="imageMArgin">
+                        </td>
+                        <td>{{ product.productName }}</td>
+                        <td>{{ product.description }}</td>
+                        <td>{{ product.createDate }}</td>
+                        <td>{{ product.price }}</td>
+                        <td>{{ product.rating }}</td>
+
+
+
+                    </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+
+<!-- // Onclick Javascript
+<a onclick="alert(1)"></a>
+// Click Angular
+<a (click)="alert(1)"></a>
+
+// Onchange JavaScript
+<select onchange="alert(1)"></select>
+// Change Angular
+<select (change)="alert(1)"></select>
+
+// Onkeypress JavaScript
+<input onkeypress="alert(1)" type="text" />
+// Keypress Angular
+<input (keypress)="alert(1)" type="text" /> -->
