@@ -6,12 +6,12 @@
         <div class="row">
             <div class="col-md-2">Filtrar por:</div>
             <div class="col-md-4">
-                <input class="form-control" name="filter" type="text">
+                <input [(ngModel)]="listFilter" class="form-control" name="filter" type="text">
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <h3>Filtro: </h3>
+                <h3>Filtro: {{ listFilter }} </h3>
             </div>
         </div>
         <div class="table-responsive">
@@ -35,10 +35,10 @@
                         <td>
                             <img *ngIf="showImage" [src]="product.imageUrl" [title]="product.productName" [style.with.px]="imageWidth" [style.margin.px]="imageMArgin">
                         </td>
-                        <td>{{ product.productName }}</td>
+                        <td>{{ product.productName | uppercase }}</td>
                         <td>{{ product.description }}</td>
-                        <td>{{ product.createDate }}</td>
-                        <td>{{ product.price }}</td>
+                        <td>{{ product.createDate | date:'yyyy/MM/dd' }}</td>
+                        <td>{{ product.price | currency: '$'}}</td>
                         <td>{{ product.rating }}</td>
 
 

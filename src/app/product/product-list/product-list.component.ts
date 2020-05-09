@@ -10,6 +10,9 @@ export class ProductListComponent implements OnInit {
   imageWidth: number = 50;
   imageMArgin: number = 2;
   showImage: boolean = false;
+
+  listFilter: string = '';
+
   /* mensajeBoton: string = 'Ocultar imagen';
   mensajeBoton2: string = 'Mostrar imagen'; */
 
@@ -18,7 +21,7 @@ export class ProductListComponent implements OnInit {
       productoId: 1,
       productName: 'Camisa volcom',
       description: 'camisa 100 % algodon',
-      createDate: '21/05/2020',
+      createDate: 'May 21, 2020',
       price: '500',
       rating: '2.6',
       imageUrl: 'https://www.skatepro.es/99-35448.htm#show_image',
@@ -27,7 +30,7 @@ export class ProductListComponent implements OnInit {
       productoId: 2,
       productName: 'Camisa volcom2',
       description: 'camisa 100 % algodon',
-      createDate: '21/05/2020',
+      createDate: 'May 21, 2020',
       price: '500',
       rating: '2.6',
       imageUrl: 'https://www.skatepro.es/99-35342.htm#show_image',
@@ -36,7 +39,7 @@ export class ProductListComponent implements OnInit {
       productoId: 3,
       productName: 'Camisa volcom3',
       description: 'camisa 100 % algodon',
-      createDate: '21/05/2020',
+      createDate: 'Jul 21, 2020',
       price: '500',
       rating: '2.6',
       imageUrl: 'https://www.skatepro.es/99-35342.htm#show_image',
