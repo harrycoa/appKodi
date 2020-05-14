@@ -31,7 +31,7 @@
                 </thead>
                 <tbody>
                     <!-- <button *ngIf="showImage" (click)="ShowImage()" class="btn btn-primary">{{ mensajeBoton }}</button> -->
-                    <tr *ngFor="let product of products">
+                    <tr *ngFor="let product of products | productFilter: listFilter">
                         <td>
                             <img *ngIf="showImage" [src]="product.imageUrl" [title]="product.productName" [style.with.px]="imageWidth" [style.margin.px]="imageMArgin">
                         </td>
@@ -39,10 +39,9 @@
                         <td>{{ product.description }}</td>
                         <td>{{ product.createDate | date:'yyyy/MM/dd' }}</td>
                         <td>{{ product.price | currency: '$'}}</td>
-                        <td>{{ product.rating }}</td>
-
-
-
+                        <!-- <td>{{ product.rating }}</td> -->
+                        <td><app-rating-star (ratingClicked)="OnRatingClicked($event)"
+                            [rating]="product.rating" ></app-rating-star></td>
                     </tr>
                 </tbody>
             </table>

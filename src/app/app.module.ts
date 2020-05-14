@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
 
 import { FormsModule } from '@angular/forms';
+import { ProductFilterPipe } from './product/product-filter.pipe';
+import { RatingStarComponent } from './rating-star/rating-star.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductFilterPipe,
+    RatingStarComponent
   ],
   imports: [
     BrowserModule,
