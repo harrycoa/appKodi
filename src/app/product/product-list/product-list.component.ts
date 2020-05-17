@@ -10,31 +10,28 @@ import { ProductService } from '../product.service';
 export class ProductListComponent implements OnInit {
   productTitle: string = 'Lista de Productos';
   imageWidth: number = 50;
-  imageMArgin: number = 2;
+  imageMargin: number = 2;
   showImage: boolean = false;
   listFilter: string = '';
-
-  /* mensajeBoton: string = 'Ocultar imagen';
-  mensajeBoton2: string = 'Mostrar imagen'; */
-
   products: IProduct[] = [];
+
+  constructor(private productService: ProductService) {}
 
   ShowImage(): void {
     this.showImage = !this.showImage;
   }
-  constructor(private productService: ProductService) {}
-
-  OnRatingClicked(message: string){
+  OnRatingClicked(message: string) {
     this.productTitle = `Lista de Productos ${message}`;
   }
 
   ngOnInit(): void {
-    this.productService.GetProducts().subscribe((data: IProduct[])=>
-    {
-      this.products = data;
-    },
-    (error: any) =>{
-      console.log(error);
-    });
+    this.productService.GetProducts().subscribe(
+      (data: IProduct[]) => {
+        this.products = data;
+      },
+      (error: any) => {
+        console.log(error);
+      }
+    );
   }
 }

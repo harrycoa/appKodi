@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { ProductFilterPipe } from './product/product-filter.pipe';
 import { RatingStarComponent } from './rating-star/rating-star.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 
 
 @NgModule({
@@ -17,6 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProductListComponent,
     ProductFilterPipe,
     RatingStarComponent,
+    HomeComponent,
+    ProductDetailComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

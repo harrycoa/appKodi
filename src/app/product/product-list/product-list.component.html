@@ -11,7 +11,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <h3>Filtro: {{ listFilter }} </h3>
+                <h3>Filtro: {{listFilter}} </h3>
             </div>
         </div>
         <div class="table-responsive">
@@ -19,8 +19,8 @@
                 <thead>
                     <tr>
                         <th>
-                            <!-- <button *ngIf="!showImage" (click)="ShowImage()" class="btn btn-primary">{{ mensajeBoton2 }}</button> -->
-                            <button (click)="ShowImage()" class="btn btn-primary">{{ showImage ? 'ocultar': ' mostrar' }} Imagen</button>
+                            <button (click)="ShowImage()" class="btn btn-primary">{{ showImage ? 'Ocultar' :'Mostrar'}}
+                                Imagen</button>
                         </th>
                         <th>Nombre</th>
                         <th>Descripción</th>
@@ -30,18 +30,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- <button *ngIf="showImage" (click)="ShowImage()" class="btn btn-primary">{{ mensajeBoton }}</button> -->
-                    <tr *ngFor="let product of products | productFilter: listFilter">
+                    <tr *ngFor="let product of products | productFilter:listFilter">
                         <td>
-                            <img *ngIf="showImage" [src]="product.imageUrl" [title]="product.productName" [style.with.px]="imageWidth" [style.margin.px]="imageMArgin">
+                            <img *ngIf="showImage" [src]="product.imageUrl" [title]="product.productName"
+                                [style.width.px]="imageWidth" [style.margin.px]="imageMargin">
                         </td>
-                        <td>{{ product.productName | uppercase }}</td>
-                        <td>{{ product.description }}</td>
-                        <td>{{ product.createDate | date:'yyyy/MM/dd' }}</td>
-                        <td>{{ product.price | currency: '$'}}</td>
-                        <!-- <td>{{ product.rating }}</td> -->
-                        <td><app-rating-star (ratingClicked)="OnRatingClicked($event)"
-                            [rating]="product.rating" ></app-rating-star></td>
+                        <td><a
+                                [routerLink]="['/productDetail', product.productId]">{{product.productName | uppercase}}</a>
+                        </td>
+                        <td>{{product.description}}</td>
+                        <td>{{product.createDate | date:'dd/MM/yyyy' }}</td>
+                        <td>{{product.price | currency:'C$ '}}</td>
+                        <td>
+                            <app-rating-star (ratingClicked)="OnRatingClicked($event)" [rating]="product.rating">
+                            </app-rating-star>
+                        </td>
                     </tr>
                 </tbody>
             </table>
