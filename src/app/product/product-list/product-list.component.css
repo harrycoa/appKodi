@@ -1,12 +1,10 @@
-thead {
-    color: blue;
+thead{
+    color:#337AB7;
 }
-
-.btn-primary {
-    background-color: gray;
+.btn-primary{
+    background-color:#337AB7;
 }
-
-.card-header {
-    background-color: gainsboro;
-    color: black;
+.card-header{
+    background-color: #337AB7; 
+    color: white;
 }

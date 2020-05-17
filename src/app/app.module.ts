@@ -8,6 +8,7 @@ import { ProductListComponent } from './product/product-list/product-list.compon
 import { FormsModule } from '@angular/forms';
 import { ProductFilterPipe } from './product/product-filter.pipe';
 import { RatingStarComponent } from './rating-star/rating-star.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -15,14 +16,10 @@ import { RatingStarComponent } from './rating-star/rating-star.component';
     AppComponent,
     ProductListComponent,
     ProductFilterPipe,
-    RatingStarComponent
+    RatingStarComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

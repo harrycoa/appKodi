@@ -12,7 +12,6 @@ export class ProductListComponent implements OnInit {
   imageWidth: number = 50;
   imageMArgin: number = 2;
   showImage: boolean = false;
-
   listFilter: string = '';
 
   /* mensajeBoton: string = 'Ocultar imagen';
@@ -30,6 +29,12 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.products = this.productService.GetProducts();
+    this.productService.GetProducts().subscribe((data: IProduct[])=>
+    {
+      this.products = data;
+    },
+    (error: any) =>{
+      console.log(error);
+    });
   }
 }
