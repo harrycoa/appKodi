@@ -19,7 +19,7 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id){
-      // debugger;
+      //debugger;
       this.productDetail += `: ${id}`;
       this.GetProductById(Number.parseInt(id));
     }
@@ -28,7 +28,7 @@ export class ProductDetailComponent implements OnInit {
   GetProductById(id: number){
     this.productService.GetProductbyId(id).subscribe(
       (data: IProduct) => {
-        // debugger;
+        //debugger;
         this.product = data;
       },
       (error: any) => {

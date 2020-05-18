@@ -1,0 +1,8 @@
+.card-header{
+    background-color: #337AB7; 
+    color: white;
+}
+
+.ng-invalid.ng-touched:not(form){
+    border: 1px solid red;
+}
